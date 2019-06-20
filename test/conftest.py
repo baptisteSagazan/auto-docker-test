@@ -50,7 +50,7 @@ def setup_containers(request):
             remove=True,
             detach=True,
             ports={"8086": 8090},
-            name="agathe-influx-ds-tests",
+            name="influx-tests",
         )
         containers.append(influxdb)
 
@@ -60,7 +60,7 @@ def setup_containers(request):
             ports={"9000": 9001},
             remove=True,
             detach=True,
-            name="agathe-minio-ds-tests",
+            name="minio-tests",
             environment={
                 "MINIO_ACCESS_KEY": env_variables.get("MINIO_ACCESS_KEY"),
                 "MINIO_SECRET_KEY": env_variables.get("MINIO_SECRET_KEY"),
